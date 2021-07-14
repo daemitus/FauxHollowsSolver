@@ -63,7 +63,7 @@ namespace FauxHollowsSolver
             if (addon == null)
                 return;
 
-            if (!addon->AtkUnitBase.IsVisible || addon->AtkUnitBase.ULDData.LoadedState != 3)
+            if (!addon->AtkUnitBase.IsVisible || addon->AtkUnitBase.UldManager.LoadedState != 3)
                 return;
 
             for (int i = 0; i < 36; i++)
@@ -176,9 +176,9 @@ namespace FauxHollowsSolver
 
         private unsafe AtkComponentButton* GetTileButton(AddonWeeklyPuzzle* addon, int index) => addon->GameBoard[index / 6][index % 6].Button;
 
-        private unsafe AtkImageNode* GetBackgroundImageNode(AtkComponentButton* button) => (AtkImageNode*)button->AtkComponentBase.ULDData.NodeList[3];
+        private unsafe AtkImageNode* GetBackgroundImageNode(AtkComponentButton* button) => (AtkImageNode*)button->AtkComponentBase.UldManager.NodeList[3];
 
-        private unsafe AtkImageNode* GetIconImageNode(AtkComponentButton* button) => (AtkImageNode*)button->AtkComponentBase.ULDData.NodeList[6];
+        private unsafe AtkImageNode* GetIconImageNode(AtkComponentButton* button) => (AtkImageNode*)button->AtkComponentBase.UldManager.NodeList[6];
 
         /*
         private unsafe void UiBuilder_OnBuildUi_DebugUI()
